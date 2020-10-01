@@ -8,7 +8,32 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      offerPrice: {
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Users' }
+      },
+      listingId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Listings' }
+      },
+      offer_price: {
+        type: Sequelize.INTEGER
+      },
+      money_down: {
+        type: Sequelize.INTEGER
+      },
+      loan_app: {
+        type: Sequelize.INTEGER
+      },
+      first_name: {
+        type: Sequelize.INTEGER
+      },
+      last_name: {
+        type: Sequelize.INTEGER
+      },
+      phone_num: {
         type: Sequelize.INTEGER
       },
       createdAt: {
