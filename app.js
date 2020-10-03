@@ -5,6 +5,7 @@ const cors = require("cors");
 const morgan = require('morgan');
 
 const app = express();
+const usersRouter = require('./routes/users');
 // require routers
 const db = require("./db/models");
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({
 app.use(morgan("dev"));
 app.use(cors());
 
+app.use('/api/users', usersRouter);
 // set port
 const PORT = process.env.PORT || 8080;
 // Check the database connection before starting the app.
